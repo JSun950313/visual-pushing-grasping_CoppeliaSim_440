@@ -210,7 +210,7 @@ class Robot(object):
             time.sleep(1)
             self.sim_sim.startSimulation()
             gripper_position = self.sim_sim.getObjectPosition(self.RG2_tip_handle, -1)
-            time.sleep(1)
+            time.sleep(2)
 
 
     def check_sim(self):
