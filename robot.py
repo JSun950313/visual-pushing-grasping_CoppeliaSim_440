@@ -255,22 +255,7 @@ class Robot(object):
         return goal_reached
 
 
-    # def stop_sim(self):
-    #     if self.is_sim:
-    #         # Now send some data to V-REP in a non-blocking fashion:
-    #         # vrep.simxAddStatusbarMessage(sim_client,'Hello V-REP!',vrep.simx_opmode_oneshot)
 
-    #         # # Start the simulation
-    #         # vrep.simxStartSimulation(sim_client,vrep.simx_opmode_oneshot_wait)
-
-    #         # # Stop simulation:
-    #         # vrep.simxStopSimulation(sim_client,vrep.simx_opmode_oneshot_wait)
-
-    #         # Before closing the connection to V-REP, make sure that the last command sent out had time to arrive. You can guarantee this with (for example):
-    #         vrep.simxGetPingTime(self.sim_client)
-
-    #         # Now close the connection to V-REP:
-    #         vrep.simxFinish(self.sim_client)
 
 
     def get_obj_positions(self):
@@ -631,7 +616,6 @@ class Robot(object):
 
             # Move gripper to location above grasp target
             grasp_location_margin = 0.15
-            # sim_ret, UR5_target_handle = vrep.simxGetObjectHandle(self.sim_client,'UR5_target',vrep.simx_opmode_blocking)
             location_above_grasp_target = (position[0], position[1], position[2] + grasp_location_margin)
 
             # Compute gripper position and linear movement increments
@@ -687,7 +671,7 @@ class Robot(object):
                 object_positions = object_positions[:, 2]
                 grasped_object_ind = np.argmax(object_positions)
                 grasped_object_handle = self.object_handles[grasped_object_ind]
-                self.sim_sim.setObjectPosition(self.sim_client, grasped_object_handle, -1,
+                self.sim_sim.setObjectPosition(grasped_object_handle, -1,
                                                (-0.5, 0.5 + 0.05 * float(grasped_object_ind), 0.1))
 
         else:
