@@ -1,5 +1,7 @@
 # Visual Pushing and Grasping Toolbox
 
+This repository is the modified version of  https://github.com/andyzeng/visual-pushing-grasping, which can be run successfully on the latest version of [CoppeliaSim V4.4.0 rev0](https://www.coppeliarobotics.com/).
+
 Visual Pushing and Grasping (VPG) is a method for training robotic agents to learn how to plan complementary pushing and grasping actions for manipulation (*e.g.* for unstructured pick-and-place applications). VPG operates directly on visual observations (RGB-D images), learns from trial and error, trains quickly, and generalizes to new objects and scenarios.
 
 <img src="images/teaser.jpg" height=223px align="left"/>
@@ -56,7 +58,6 @@ This implementation requires the following dependencies (tested on Ubuntu 20.04.
   ```shell
   pip install torch==0.3.1 torchvision==0.2.0
   ```
-  
   
 * [PyTorch](http://pytorch.org/) version 1.0+ (thanks [Andrew](https://github.com/ahundt) for the support!):
   
